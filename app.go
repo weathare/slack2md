@@ -6,7 +6,7 @@ import (
 	"path"
 )
 
-const chunkSize = 500
+const chunkSize = 4
 const inputDir = "slack_export"
 const outputDir = "output"
 
