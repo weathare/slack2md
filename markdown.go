@@ -117,5 +117,6 @@ func (t *MarkdownTranslator) ToUserTable(users []User) []string {
 }
 
 func toTimeStampString(ts time.Time) string {
-	return ts.UTC().Format(time.RFC3339)
+	jst := time.FixedZone("Asia/Tokyo", 9*60*60)
+	return ts.In(jst).Format(time.RFC3339)
 }

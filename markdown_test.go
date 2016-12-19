@@ -67,8 +67,8 @@ func TestMarkdownChunkList(t *testing.T) {
 	chunkInfos := ReadAllChunksAsInfo(3, "test_data/channel1")
 	actual := m.ToChunkList(chunkInfos)
 	testLines(t, actual, []string{
-		"* [1 (2016-05-13T08:43:07Z - 2016-05-13T08:43:09Z)](history--channel1--1.md)",
-		"* [2 (2016-05-13T08:43:58Z - 2016-05-18T09:39:16Z)](history--channel1--2.md)",
+		"* [1 (2016-05-13T17:43:07+09:00 - 2016-05-13T17:43:09+09:00)](history--channel1--1.md)",
+		"* [2 (2016-05-13T17:43:58+09:00 - 2016-05-18T18:39:16+09:00)](history--channel1--2.md)",
 		"",
 	})
 }
@@ -85,9 +85,9 @@ func TestMarkdownMessageList(t *testing.T) {
 	m := NewMarkdownTranslator()
 	actual := m.ToMessageList(resolvedMessages)
 	testLines(t, actual, []string{
-		"* 2016-05-13T08:43:07Z @alice: @alice has joined the channel",
-		"* 2016-05-13T08:43:09Z @alice: @alice set the channel purpose: ",
-		"* 2016-05-13T08:43:09Z @bob: @bob has joined the channel",
+		"* 2016-05-13T17:43:07+09:00 @alice: @alice has joined the channel",
+		"* 2016-05-13T17:43:09+09:00 @alice: @alice set the channel purpose: ",
+		"* 2016-05-13T17:43:09+09:00 @bob: @bob has joined the channel",
 		"",
 	})
 }
